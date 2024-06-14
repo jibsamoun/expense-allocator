@@ -39,8 +39,8 @@ const LandingPage: React.FC = () => {
   const [loginHover, setLoginHover] = useState(false);
   const [loginActive, setLoginActive] = useState(false);
   
-  const [signupHover, setSignupHover] = useState(false);
-  const [signupActive, setSignupActive] = useState(false);
+  const [signUpHover, setSignupHover] = useState(false);
+  const [signUpActive, setSignupActive] = useState(false);
 
   /**
    * Event handlers: funcion that handles what happens during various events
@@ -67,7 +67,7 @@ const LandingPage: React.FC = () => {
 
   const signUpLinkStyle = {
     ...linkStyle,
-    color: signupActive ? "#ffd000" : signupHover ? "#ffea00" : "white",
+    color: signUpActive ? "#ffd000" : signUpHover ? "#ffea00" : "white",
     // same logic as above
   };
 
