@@ -87,6 +87,7 @@ const LandingPage: React.FC = () => {
     outline: "none",
   };
 
+
   return (
     <div style={landingPageStyle}>
       <h1 style={titleStyle}>Divvy</h1>
@@ -98,7 +99,7 @@ const LandingPage: React.FC = () => {
       </div>
       <div style={linkContainerStyle}>
         <Link
-          to="/login"
+          to="/homePage"
           style={loginLinkStyle}
           onMouseEnter={handleLoginMouseEnter} // when mouse cursor hovers over login
           onMouseLeave={handleLoginMouseLeave} // when mouse cursor leaves login
