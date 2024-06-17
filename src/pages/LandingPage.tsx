@@ -26,7 +26,7 @@ const LandingPage: React.FC = () => {
   // Base styling of the login/sign up link buttons
   const linkStyle: React.CSSProperties = {
     color: "white",
-    fontFamily: "inter",
+    fontFamily: "inter, sans-serif",
     fontSize: "24px",
     fontWeight: "bold",
     textDecoration: "none",
@@ -78,7 +78,7 @@ const LandingPage: React.FC = () => {
   };
 
   const inputStyle: React.CSSProperties = {
-    fontFamily: "inter",
+    fontFamily: "inter, sans-serif",
     fontSize: "20px",
     textAlign: "center",
     borderRadius: "25px",
