@@ -45,6 +45,26 @@ const HomePage: React.FC = () => {
     borderRadius: '30px'
   };
 
+  const additionalRectangle: React.CSSProperties = {
+    width: '260px',
+    height: '200px',
+    backgroundColor: 'lightgrey',
+    position: 'fixed',
+    top: '200px',
+    left: '660px',
+    borderRadius: '30px'
+  };
+
+  const addCircle: React.CSSProperties = {
+    width: '70px',
+    height: '70px',
+    backgroundColor: '#68D8D6',
+    position: 'fixed',
+    top: '260px',
+    left: '755px',
+    borderRadius: '60px'
+  };
+
   const bottomRectStyle: React.CSSProperties = {
     width: '260px',
     height: '50px',
@@ -108,19 +128,16 @@ const HomePage: React.FC = () => {
       <img src={lines} alt="sideBar" style={{ top: '0', right: ' 0', position: 'fixed', padding: '50px', height: '60px'}}/>
       <img src={peterPFP} alt="Profile" style={{ top: '0', left: '0', position: 'fixed', padding: '50px' }}/>
       <h2 style={usernameStyle}> Peter Le</h2>
-      {/* <div style={rectangleStyle}>
-        Group 1 
-      </div> */}
       <div style={groupOne}>
         <div style={rectangle}></div>
         <div style={bottomRectStyle}></div>
         <p style={groupOneStyle}> Group 1</p>
       </div>
       <img src={group} style={{ top: '160px', left: '315px', position: 'fixed', padding: '50px', height: '140px', width: '230px'}}/>
-      {/* <div style={groupOne}>
-        <div style={bottomRectStyle}></div>
-        <p style={groupOneStyle}> Group 1</p>
-      </div> */}
+      <div style={additionalRectangle}>
+      <div style={addCircle}> </div>
+
+      </div>
     </div>
   )
 }
