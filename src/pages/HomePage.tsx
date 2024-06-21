@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import peterPFP from '../assets/PFP.png';
 import lines from '../assets/horizontal-lines.png';
 import group from '../assets/group.png';
+import addEvents from '../assets/addEvents.png';
+import questionMark from '../assets/questionMark.png';
+import otherOptions from '../assets/otherOptions.png';
 
 
 const HomePage: React.FC = () => {
@@ -19,26 +22,27 @@ const HomePage: React.FC = () => {
   const titleStyle: React.CSSProperties = {
     color: "#68D8D6",
     fontFamily: "inter, sans-serif",
-    fontSize: "45px",
+    fontSize: "55px",
     position: "fixed",
     top: "0",
-    paddingTop: "60px"
+    paddingTop: "30px",
+    textShadow: '0 5px 8px rgba(0, 0, 0, 0.2)'
   };
 
   const usernameStyle: React.CSSProperties = {
-    color: "#68D8D6",
+    color: "black",
     fontFamily: 'Inter, sans-serif',
-    fontSize: "25px",
+    fontSize: "30px",
     position: "fixed",
-    left: '40px',
+    left: '60px',
     top: '120px',
     marginLeft: '0'
   };
 
   const rectangle: React.CSSProperties = {
-    width: '260px',
+    width: '210px',
     height: '200px',
-    backgroundColor: 'lightgrey',
+    backgroundColor: '#D9D9D9',
     position: 'fixed',
     top: '200px',
     left: '350px',
@@ -46,29 +50,39 @@ const HomePage: React.FC = () => {
   };
 
   const additionalRectangle: React.CSSProperties = {
-    width: '260px',
+    width: '210px',
     height: '200px',
-    backgroundColor: 'lightgrey',
     position: 'fixed',
     top: '200px',
     left: '660px',
-    borderRadius: '30px'
+    borderRadius: '30px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)'
   };
 
   const addCircle: React.CSSProperties = {
+    backgroundImage: `url(${addEvents})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
     width: '70px',
     height: '70px',
-    backgroundColor: '#68D8D6',
     position: 'fixed',
     top: '260px',
-    left: '755px',
-    borderRadius: '60px'
+    left: '725px',
+    borderRadius: '40px',
+    border: 'none',
+    cursor: 'pointer',
+    outline: 'none',
+    padding: '0',
+    margin: '0',
+    backgroundColor: 'white'
   };
 
   const bottomRectStyle: React.CSSProperties = {
-    width: '260px',
+    left: '350px',
+    width: '210px',
     height: '50px',
-    background: 'linear-gradient(to right, #68D8D6, #B4FFF6)',
+    background: 'linear-gradient(to right, #68D8D6, #ABEBDF)',
     position: 'fixed',
     borderBottomLeftRadius: '20px',
     borderBottomRightRadius: '20px',
@@ -119,24 +133,47 @@ const HomePage: React.FC = () => {
     textAlign: 'center',
   };
 
+  const verticalLine: React.CSSProperties = {
+    position: 'absolute',
+    width: '2px',
+    minHeight: '100vh',
+    backgroundColor: 'black',
+    background: 'linear-gradient(to bottom, transparent, black, transparent)',
+  };
+
+  const horizontalLeftLine: React.CSSProperties = {
+    position: 'absolute',
+    top: '200px',
+    left: '0px',
+    width: '260px',
+    minHeight: '2px',
+    backgroundColor: 'black',
+    background: 'linear-gradient(to right, transparent, black)',
+  };
+
 
 
 
   return (
     <div style={homePageStyle}>
+      <div style={{ ...verticalLine, left: '260px'}}></div>
+      <div style={{ ...verticalLine, right: '260px'}}></div>
+      <div style={horizontalLeftLine}></div>
       <h1 style={titleStyle}>Divvy</h1>
-      <img src={lines} alt="sideBar" style={{ top: '0', right: ' 0', position: 'fixed', padding: '50px', height: '60px'}}/>
-      <img src={peterPFP} alt="Profile" style={{ top: '0', left: '0', position: 'fixed', padding: '50px' }}/>
+      <img src={questionMark} alt="questionMark" style={{ top: '0', right: '110px', position: 'absolute', padding: '50px', height: '60px'}}></img>
+      <img src={otherOptions} alt="options" style={{ top: '0', right: '0', position: 'fixed', padding: '50px', height: '60px'}}/>
+      <img src={peterPFP} alt="Profile" style={{ top: '0', left: '0', position: 'fixed', padding: '40px' }}/>
+      
       <h2 style={usernameStyle}> Peter Le</h2>
+      
       <div style={groupOne}>
         <div style={rectangle}></div>
         <div style={bottomRectStyle}></div>
         <p style={groupOneStyle}> Group 1</p>
       </div>
-      <img src={group} style={{ top: '160px', left: '315px', position: 'fixed', padding: '50px', height: '140px', width: '230px'}}/>
+      <img src={group} style={{ top: '160px', left: '315px', position: 'fixed', padding: '50px', height: '140px', width: '180px'}}/>
       <div style={additionalRectangle}>
-      <div style={addCircle}> </div>
-
+      <button style={addCircle}> </button>
       </div>
     </div>
   )
