@@ -13,7 +13,7 @@ const SignUpPage: React.FC = () => {
   const titleStyle: React.CSSProperties = {
     color: "#68D8D6",
     fontFamily: "inter, sans-serif",
-    fontSize: "96px",
+    fontSize: "92px",
   };
 
   const signUpContainerStyle: React.CSSProperties = {
@@ -23,8 +23,8 @@ const SignUpPage: React.FC = () => {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    width: "500px",
-    height: "450px",
+    width: "400px",
+    height: "350px",
     marginTop: "-40px",
   };
 
@@ -43,7 +43,7 @@ const SignUpPage: React.FC = () => {
     textAlign: "center",
     fontSize: "24px",
     borderRadius: "50px",
-    width: "90%",
+    width: "85%",
     height: "17%",
     border: "none",
     outline: "none",
@@ -55,16 +55,17 @@ const SignUpPage: React.FC = () => {
   const signUpButtonStyle: React.CSSProperties = {
     fontFamily: "inter, sans-serif",
     borderRadius: "50px",
-    width: "45%",
-    height: "15%",
+    width: "40%",
+    height: "12%",
     marginTop: "12px",
-    marginBottom: "12px",
+    marginBottom: "24px",
     backgroundColor: "#68D8D6",
     border: "none",
     boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.4)",
     color: "white",
-    fontSize: "28px",
+    fontSize: "24px",
     fontWeight: "bold",
+
   };
 
   const [signUpHover, setSignupHover] = useState(false);
