@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import peterPFP from '../assets/PFP.png';
-import lines from '../assets/horizontal-lines.png';
 import group from '../assets/group.png';
 import addEvents from '../assets/addEvents.png';
 import questionMark from '../assets/questionMark.png';
 import otherOptions from '../assets/otherOptions.png';
+import Modal from '../Modal';
 
 
 const HomePage: React.FC = () => {
@@ -151,7 +151,7 @@ const HomePage: React.FC = () => {
     background: 'linear-gradient(to right, transparent, black)',
   };
 
-
+  const [isOpen, setIsOpen] = useState(false)
 
 
   return (
@@ -166,11 +166,20 @@ const HomePage: React.FC = () => {
       
       <h2 style={usernameStyle}> Peter Le</h2>
       
+      <div>
+
+
+        
+      </div>
       <div style={groupOne}>
         <div style={rectangle}></div>
         <div style={bottomRectStyle}></div>
         <p style={groupOneStyle}> Group 1</p>
       </div>
+      <button onClick={() => setIsOpen(true)}> Open Modal</button>
+      <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+        Fancy Modal
+      </Modal>
       <img src={group} style={{ top: '160px', left: '315px', position: 'fixed', padding: '50px', height: '140px', width: '180px'}}/>
       <div style={additionalRectangle}>
       <button style={addCircle}> </button>
