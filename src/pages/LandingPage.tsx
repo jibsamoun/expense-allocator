@@ -87,7 +87,6 @@ const LandingPage: React.FC = () => {
     color: "black",
     outline: "none",
     boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.3)",
-    marginBottom: "8px",
   };
 
   return (
