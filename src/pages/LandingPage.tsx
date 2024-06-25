@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const LandingPage: React.FC = () => {
   const landingPageStyle: React.CSSProperties = {
     backgroundColor: "#68D8D6",
-    height: "100vh",
+    height: "100vh", // 100% of viewport height
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -14,7 +14,7 @@ const LandingPage: React.FC = () => {
 
   const titleStyle: React.CSSProperties = {
     color: "white",
-    fontFamily: "inter",
+    fontFamily: "inter, sans-serif",
     fontSize: "96px",
   };
 
@@ -30,6 +30,7 @@ const LandingPage: React.FC = () => {
     fontSize: "24px",
     fontWeight: "bold",
     textDecoration: "none",
+    textShadow: "2px 2px 12px rgba(0, 0, 0, 0.2)", // horizontal, vertical, blur radius, color
   };
 
   /**
@@ -38,7 +39,7 @@ const LandingPage: React.FC = () => {
    */
   const [loginHover, setLoginHover] = useState(false);
   const [loginActive, setLoginActive] = useState(false);
-  
+
   const [signUpHover, setSignupHover] = useState(false);
   const [signUpActive, setSignupActive] = useState(false);
 
@@ -49,17 +50,17 @@ const LandingPage: React.FC = () => {
   const handleLoginMouseEnter = () => setLoginHover(true); // if mouse hovers over login button -> set login hover status to true
   const handleLoginMouseLeave = () => setLoginHover(false); // if mouse leaves login button -> set login hover status to false
   const handleLoginMouseDown = () => setLoginActive(true); // if mouse clicks on login button -> set login active status to true
-  const handleLoginMouseUp = () => setLoginActive(false); // if mouse unclicks login button -> set login active status to false 
+  const handleLoginMouseUp = () => setLoginActive(false); // if mouse unclicks login button -> set login active status to false
 
   const handleSignupMouseEnter = () => setSignupHover(true); // same logic as above
   const handleSignupMouseLeave = () => setSignupHover(false);
   const handleSignupMouseDown = () => setSignupActive(true);
   const handleSignupMouseUp = () => setSignupActive(false);
-  
+
   const loginLinkStyle = {
     ...linkStyle, // imports base styling of the linkStyle
     // logic used to restyle based on different events
-    color: loginActive ? "#ffd000" : loginHover ? "#ffea00" : "white", 
+    color: loginActive ? "#ffd000" : loginHover ? "#ffea00" : "white",
     // if loginActive is true -> set color
     // if loginActive is false, but loginHover is true -> set other color
     // if loginActive and loginHover are false -> set to white
@@ -85,19 +86,32 @@ const LandingPage: React.FC = () => {
     border: "none",
     color: "black",
     outline: "none",
+    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.3)",
+    marginBottom: "8px",
   };
 
 
   return (
-    <div style={landingPageStyle}>
-      <h1 style={titleStyle}>Divvy</h1>
-      <div style={inputContainerStyle}>
-        <input type="text" placeholder="Username" style={inputStyle} />
-      </div>
-      <div style={inputContainerStyle}>
-        <input type="text" placeholder="Password" style={inputStyle} />
-      </div>
-      <div style={linkContainerStyle}>
+    <>
+      <style>
+        {`
+          html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+          }
+        `}
+      </style>
+      <div style={landingPageStyle}>
+        <h1 style={titleStyle}>Divvy</h1>
+        <div style={inputContainerStyle}>
+          <input type="text" placeholder="Username" style={inputStyle} />
+        </div>
+        <div style={inputContainerStyle}>
+          <input type="text" placeholder="Password" style={inputStyle} />
+        </div>
+        <div style={linkContainerStyle}>
         <Link
           to="/homePage"
           style={loginLinkStyle}
@@ -108,20 +122,21 @@ const LandingPage: React.FC = () => {
         >
           Login
         </Link>
+        </div>
+        <div>
+          <Link
+            to="/signup"
+            style={signUpLinkStyle}
+            onMouseEnter={handleSignupMouseEnter}
+            onMouseLeave={handleSignupMouseLeave}
+            onMouseDown={handleSignupMouseDown}
+            onMouseUp={handleSignupMouseUp}
+          >
+            Sign Up
+          </Link>
+        </div>
       </div>
-      <div>
-        <Link
-          to="/signup"
-          style={signUpLinkStyle}
-          onMouseEnter={handleSignupMouseEnter}
-          onMouseLeave={handleSignupMouseLeave}
-          onMouseDown={handleSignupMouseDown}
-          onMouseUp={handleSignupMouseUp}
-        >
-          Sign Up
-        </Link>
-      </div>
-    </div>
+    </>
   );
 };
 
