@@ -172,21 +172,15 @@ const HomePage: React.FC = () => {
       
       <h2 style={usernameStyle}> Peter Le</h2>
       
-      <div>
-
-
-        
-      </div>
       <div style={groupOne}>
         <div style={rectangle}></div>
         <div style={bottomRectStyle}></div>
         <p style={groupOneStyle}> Group 1</p>
       </div>
-      <button onClick={() => setIsOpen(true)}> Open Modal</button>
+      <img src={group} onClick={() => setIsOpen(true)} style={{ top: '160px', left: '315px', position: 'fixed', padding: '50px', height: '140px', width: '180px'}}/>
       <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-        Fancy Modal
+        Group 1
       </Modal>
-      <img src={group} style={{ top: '160px', left: '315px', position: 'fixed', padding: '50px', height: '140px', width: '180px'}}/>
       <div style={additionalRectangle}>
       <button style={addCircle}> </button>
       </div>
