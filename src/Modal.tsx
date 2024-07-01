@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Modal from 'react-modal';
 
 const modalStyle: React.CSSProperties = {
   width: '70vw',
@@ -35,7 +36,8 @@ const closeButton: React.CSSProperties = {
   height: '30px',
   cursor: 'pointer',
   transition: 'background-color 0.3s', 
-  fontSize: '22px'
+  fontSize: '22px',
+  background: 'none'
 };
 
 const closeButtonHover: React.CSSProperties = {   
@@ -62,12 +64,14 @@ const inputContainerStyle: React.CSSProperties = {
   flexDirection: "column",
   margin: "0.1rem 0",
   bottom: '10px',
-  height: '60px'
+  height: '60px',
 };
 
 const inputStyle: React.CSSProperties = {
+  position: 'fixed',
+  marginTop: '20px',
   height: '40px',
-  width: '450px',
+  width: '100%',
   fontFamily: "inter, sans-serif",
   fontSize: "20px",
   textAlign: "center",
@@ -76,27 +80,35 @@ const inputStyle: React.CSSProperties = {
   color: "black",
   outline: "none",
   boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.3)",
-  marginBottom: "8px",
 };
 
-export default function Modal({ open, children, onClose }: { open: boolean, children: React.ReactNode, onClose: () => void }) {
+export default function ModalComponent({ open, children, onClose, onRequestClose }: { open: boolean, children: React.ReactNode, onClose: () => void, onRequestClose: () => void }) {
   const [isHovered, setIsHovered] = useState(false);
-  if (!open) return null
+  if (!open) return null;
+
   return (
-    <>
-    <div style={overlayStyle} />
-    <div style={modalStyle}>
-      <button style={isHovered ? closeButtonHover : closeButton}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          onClick={onClose}>X</button> 
+    <Modal
+      isOpen={open}
+      onRequestClose={onRequestClose}
+      style={{
+        overlay: overlayStyle,
+        content: modalStyle
+      }}
+    >
+      <button
+        style={isHovered ? closeButtonHover : closeButton}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onClick={onClose}
+      >
+        X
+      </button>
       {children}
       <div style={rectangle}>
-          <div style={inputContainerStyle}>
-              <input type="text" placeholder='Aa' style={inputStyle}/>
-          </div>
+        <div style={inputContainerStyle}>
+          <input type="text" placeholder="Aa" style={inputStyle} />
+        </div>
       </div>
-    </div>
-    </>
-  )
+    </Modal>
+  );
 }

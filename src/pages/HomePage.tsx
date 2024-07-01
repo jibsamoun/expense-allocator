@@ -8,7 +8,9 @@ import otherOptions from '../assets/otherOptions.png';
 import Modal from '../Modal';
 
 
+
 const HomePage: React.FC = () => {
+
   const homePageStyle: React.CSSProperties = {
     backgroundColor: "#FFF",
     height: "100vh",
@@ -178,7 +180,7 @@ const HomePage: React.FC = () => {
         <p style={groupOneStyle}> Group 1</p>
       </div>
       <img src={group} onClick={() => setIsOpen(true)} style={{ top: '160px', left: '315px', position: 'fixed', padding: '50px', height: '140px', width: '180px'}}/>
-      <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+      <Modal open={isOpen} onClose={() => setIsOpen(false)} onRequestClose= {() => setIsOpen(false)}>
         Group 1
       </Modal>
       <div style={additionalRectangle}>
