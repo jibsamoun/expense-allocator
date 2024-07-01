@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import peterPFP from '../assets/PFP.png';
 import group from '../assets/group.png';
 import addEvents from '../assets/addEvents.png';
@@ -10,6 +11,11 @@ import Modal from '../Modal';
 
 
 const HomePage: React.FC = () => {
+  const navigate = useNavigate();
+
+  const takeToGroup = () => {
+    navigate('/GroupchatPage');
+  };
 
   const homePageStyle: React.CSSProperties = {
     backgroundColor: "#FFF",
@@ -159,7 +165,7 @@ const HomePage: React.FC = () => {
     background: 'linear-gradient(to right, transparent, black)',
   };
 
-  const [isOpen, setIsOpen] = useState(false)
+  
 
 
   return (
@@ -179,10 +185,11 @@ const HomePage: React.FC = () => {
         <div style={bottomRectStyle}></div>
         <p style={groupOneStyle}> Group 1</p>
       </div>
-      <img src={group} onClick={() => setIsOpen(true)} style={{ top: '160px', left: '315px', position: 'fixed', padding: '50px', height: '140px', width: '180px'}}/>
+      <img src={group} onClick={takeToGroup} style={{ top: '160px', left: '315px', position: 'fixed', padding: '50px', height: '140px', width: '180px'}}/>
+      {/* <img src={group} onClick={() => setIsOpen(true)} style={{ top: '160px', left: '315px', position: 'fixed', padding: '50px', height: '140px', width: '180px'}}/>
       <Modal open={isOpen} onClose={() => setIsOpen(false)} onRequestClose= {() => setIsOpen(false)}>
         Group 1
-      </Modal>
+      </Modal> */}
       <div style={additionalRectangle}>
       <button style={addCircle}> </button>
       </div>
