@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 
-const modalStyle = {
-  width: '50vw',
-  height: '200px',
+const modalStyle: React.CSSProperties = {
+  width: '70vw',
+  height: '80vh',
   position: 'fixed',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
   backgroundColor: '#FFF',
   padding: '50px',
-  zIndex: 1000
+  zIndex: 1000,
+  fontFamily: 'Inter, sans-serif',
+  fontSize: '20px',
+  fontWeight: '700'
 };
 
 
@@ -40,6 +43,41 @@ const closeButtonHover: React.CSSProperties = {
   backgroundColor: 'red',
 };
 
+const rectangle: React.CSSProperties = {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'flex-end',
+  width: '70vw',
+  height: '70vh',
+  backgroundColor: '#D9D9D9',
+  position: 'fixed',
+  top: '50%',
+  left: '50%',
+  borderRadius: '30px',
+  transform: 'translate(-50%, -50%)',
+};
+
+const inputContainerStyle: React.CSSProperties = {
+  width: '100%',
+  flexDirection: "column",
+  margin: "0.1rem 0",
+  bottom: '10px',
+  height: '60px'
+};
+
+const inputStyle: React.CSSProperties = {
+  height: '40px',
+  width: '450px',
+  fontFamily: "inter, sans-serif",
+  fontSize: "20px",
+  textAlign: "center",
+  borderRadius: "25px",
+  border: "none",
+  color: "black",
+  outline: "none",
+  boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.3)",
+  marginBottom: "8px",
+};
 
 export default function Modal({ open, children, onClose }: { open: boolean, children: React.ReactNode, onClose: () => void }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -53,6 +91,11 @@ export default function Modal({ open, children, onClose }: { open: boolean, chil
           onMouseLeave={() => setIsHovered(false)}
           onClick={onClose}>X</button> 
       {children}
+      <div style={rectangle}>
+          <div style={inputContainerStyle}>
+              <input type="text" placeholder='Aa' style={inputStyle}/>
+          </div>
+      </div>
     </div>
     </>
   )

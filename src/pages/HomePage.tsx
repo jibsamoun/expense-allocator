@@ -166,7 +166,7 @@ const HomePage: React.FC = () => {
       <div style={{ ...verticalLine, right: '260px'}}></div>
       <div style={horizontalLeftLine}></div>
       <button style={titleStyle}>Divvy</button>
-      <img src={questionMark} alt="questionMark" style={{ top: '0', right: '110px', position: 'absolute', padding: '50px', height: '60px'}}></img>
+      <img src={questionMark} alt="questionMark" style={{ top: '0', right: '110px', position: 'fixed', padding: '50px', height: '60px'}}></img>
       <img src={otherOptions} alt="options" style={{ top: '0', right: '0', position: 'fixed', padding: '50px', height: '60px'}}/>
       <img src={peterPFP} alt="Profile" style={{ top: '0', left: '0', position: 'fixed', padding: '40px' }}/>
       
