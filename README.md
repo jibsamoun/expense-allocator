@@ -89,15 +89,7 @@ Divvy is a comprehensive expense allocation system designed to streamline the pr
 - **Developer**: Jibril Samoun, Peter Le, Kris Tong, Kevin Duong
 - **GitHub Profile**: [jibsamoun](https://github.com/jibsamoun) [peterle0604](https://github.com/peterle0604) [kristong123](https://github.com/kristong123) [kevinnduong](https://github.com/kevinnduong)
 - **Acknowledgments**: Special thanks to the developers of the technologies used in this project.
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
-
 ---
-
-Feel free to contribute to the project by opening issues or submitting pull requests. Your feedback and contributions are welcome!
-
-
 
 
 # React + TypeScript + Vite
